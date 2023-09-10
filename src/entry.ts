@@ -17,14 +17,13 @@ router.use(
   })
 );
 
-router.get("/", (ctx) => {
-  //   ctx.session.data = 123;
+router.get("/", () => {
   return new Response('Go to <a href="/about">Home</a>', {
     headers: { "Content-Type": "text/html" },
   });
 });
 
-router.get("/home", async (ctx) => {
+router.get("/home", () => {
   return new Response('Go to <a href="/about">About</a>', {
     headers: { "Content-Type": "text/html" },
   });
@@ -32,7 +31,7 @@ router.get("/home", async (ctx) => {
 
 router.get(
   "/about",
-  async (ctx) =>
+  () =>
     new Response("<p>About page</p>", {
       headers: { "Content-Type": "text/html" },
     })
